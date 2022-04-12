@@ -99,5 +99,15 @@ namespace csharp_oop_shop_2
             Console.WriteLine("Hai svuotato la bottiglia");
         }
 
+        //override Stampatrodotto()
+        public void StampaProdotto()
+        {
+            Console.WriteLine("----Acqua----");
+            Console.Write(codiceStampa + "-");
+            Console.WriteLine(nome);
+            Console.WriteLine("sorgente: " + sorgente);
+            Console.WriteLine("Ph: " + ph);
+            Console.WriteLine("Capienza in litri: " + dimensioneInLitri);
+        }
     }
 }

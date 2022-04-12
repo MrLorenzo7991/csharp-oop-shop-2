@@ -15,3 +15,5 @@ acquaGuizza.Riempi(12);
 
 acquaGuizza.Svuota();
 Console.WriteLine(acquaGuizza.GetLitriDisponibili());
+
+acquaGuizza.StampaProdotto();

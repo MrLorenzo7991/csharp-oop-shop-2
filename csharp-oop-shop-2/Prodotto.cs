@@ -9,12 +9,12 @@ namespace csharp_oop_shop_2
     internal class Prodotto
     {
         //attributi
-        private string nome;
-        private int codice;
-        private string descrizione;
-        private double prezzo;
-        private int iva;
-        private string codiceStampa;
+        private protected string nome;
+        private protected int codice;
+        private protected string descrizione;
+        private protected double prezzo;
+        private protected int iva;
+        private protected string codiceStampa;
 
         //costruttore con descrizione
         public Prodotto(string nome, string descrizione, double prezzo, int iva)
@@ -92,7 +92,7 @@ namespace csharp_oop_shop_2
         }
 
         //Stampa prodotto
-        public void StampaProdotto()
+        public virtual void StampaProdotto()
         {
             Console.WriteLine("----Prodotto----");
             Console.Write(this.codiceStampa + "-");
