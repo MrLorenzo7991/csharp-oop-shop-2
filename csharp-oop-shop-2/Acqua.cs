@@ -8,23 +8,31 @@ namespace csharp_oop_shop_2
 {
     internal class Acqua : Prodotto
     {
-        private double dimensioneInLitri;
+        private double capacitaInLitri;
+        private const double CAPACITA_MASSIMA = 1.5;
         private double litriDisponibili;
         private double ph;
         private string sorgente;
-        public Acqua(string nome, double dimensioneInLitri ,double prezzo, int iva) : base(nome, prezzo, iva)
+        public Acqua(string nome, double capacitaInLitri ,double prezzo, int iva) : base(nome, prezzo, iva)
         {
-            this.dimensioneInLitri = dimensioneInLitri;
-            litriDisponibili = dimensioneInLitri;
+            if (capacitaInLitri > CAPACITA_MASSIMA)
+            {
+                Console.WriteLine("Hai superato la massima capacità settabile, la capacità della bottiglia è stata settata a: " + CAPACITA_MASSIMA + " lt");
+                this.capacitaInLitri = CAPACITA_MASSIMA;
+                litriDisponibili = CAPACITA_MASSIMA;
+            } else
+            {
+                this.capacitaInLitri = capacitaInLitri;
+                litriDisponibili = capacitaInLitri;
+            }
             ph = 7;
             sorgente = "Fonte Guizza";
-
         }
 
         //getter acqua
         public double GetDimensioneInLitri()
         {
-            return dimensioneInLitri;
+            return capacitaInLitri;
         }
         public double GetLitriDisponibili()
         {
@@ -41,7 +49,7 @@ namespace csharp_oop_shop_2
         //Setter acqua
         public void SetDimensioneInLitri(double litri)
         {
-            this.dimensioneInLitri = litri;
+            this.capacitaInLitri = litri;
         }
 
 
@@ -75,14 +83,14 @@ namespace csharp_oop_shop_2
         //Metodo Riempi 
         public void Riempi(double litriDaRiempire)
         {
-            double capiezaRimanente = dimensioneInLitri - litriDisponibili;
+            double capiezaRimanente = capacitaInLitri - litriDisponibili;
             if(litriDaRiempire < 0)
             {
                 Console.WriteLine("Non puoi riempire litri negativi!");
             }
             else if(litriDaRiempire > capiezaRimanente)
             {
-                litriDisponibili = dimensioneInLitri;
+                litriDisponibili = capacitaInLitri;
                 Console.WriteLine("Hai riempito più di quanto potevi! La bottiglia è piena con " + litriDisponibili + " litri");
             }
             else
@@ -107,7 +115,7 @@ namespace csharp_oop_shop_2
             Console.WriteLine(base.nome);
             Console.WriteLine("sorgente: " + this.sorgente);
             Console.WriteLine("Ph: " + this.ph);
-            Console.WriteLine("Capienza in litri: " + this.dimensioneInLitri);
+            Console.WriteLine("Capienza in litri: " + this.capacitaInLitri);
         }
     }
 }
