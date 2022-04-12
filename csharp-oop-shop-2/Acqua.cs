@@ -92,5 +92,12 @@ namespace csharp_oop_shop_2
             }
         }
 
+        //Metodo Svuota
+        public void Svuota()
+        {
+            litriDisponibili = 0;
+            Console.WriteLine("Hai svuotato la bottiglia");
+        }
+
     }
 }

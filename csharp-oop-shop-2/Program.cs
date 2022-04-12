@@ -12,3 +12,6 @@ acquaGuizza.Bevi(0.7);
 acquaGuizza.Riempi(1);
 acquaGuizza.Riempi(-2);
 acquaGuizza.Riempi(12);
+
+acquaGuizza.Svuota();
+Console.WriteLine(acquaGuizza.GetLitriDisponibili());
