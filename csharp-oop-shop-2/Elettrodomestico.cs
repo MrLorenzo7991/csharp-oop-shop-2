@@ -53,7 +53,7 @@ namespace csharp_oop_shop_2
             else
             {
                 acceso=true;
-                Console.WriteLine("Ho acceso l'elettetro domestico");
+                Console.WriteLine("Ho acceso l'elettetrodomestico");
             }
         }
         public void Spegni()
@@ -65,7 +65,7 @@ namespace csharp_oop_shop_2
             else
             {
                 acceso = false;
-                Console.WriteLine("Ho spento l'elettetro domestico");
+                Console.WriteLine("Ho spento l'elettetrodomestico");
             }
         }
         

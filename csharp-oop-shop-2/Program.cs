@@ -28,3 +28,11 @@ sacchetto1.RimuoviPezzi(4);
 sacchetto1.AggiungiPezzi(4);
 sacchetto1.AggiungiPezzi(10);
 sacchetto1.AggiungiPezzi(-1);
+
+Elettrodomestico frigo = new Elettrodomestico("Frigo", "2 porte", 2000, 'a', 699, 22);
+frigo.Accendi();
+frigo.Accendi();
+frigo.Spegni();
+frigo.Spegni();
+
+CiboInScatola mais = new CiboInScatola("Mais", "peruviano", 400, 2.43, 4);

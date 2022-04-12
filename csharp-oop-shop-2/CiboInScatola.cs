@@ -13,7 +13,7 @@ namespace csharp_oop_shop_2
 
         public CiboInScatola(string nome, string descrizione, double pesoCiboScatolaInKg, double prezzo, int iva) : base(nome, descrizione, prezzo, iva)
         {
-            if (pesoCiboScatola > PESO_MASSIMO)
+            if (pesoCiboScatolaInKg > PESO_MASSIMO)
             {
                 Console.WriteLine("Hai superato il peso massimo per il cibo in scatola, il peso è stato settato a: " + PESO_MASSIMO + " kg");
                 this.pesoCiboScatola = PESO_MASSIMO;
