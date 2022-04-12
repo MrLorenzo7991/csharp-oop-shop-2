@@ -103,11 +103,11 @@ namespace csharp_oop_shop_2
         public void StampaProdotto()
         {
             Console.WriteLine("----Acqua----");
-            Console.Write(codiceStampa + "-");
-            Console.WriteLine(nome);
-            Console.WriteLine("sorgente: " + sorgente);
-            Console.WriteLine("Ph: " + ph);
-            Console.WriteLine("Capienza in litri: " + dimensioneInLitri);
+            Console.Write(base.codiceStampa + "-");
+            Console.WriteLine(base.nome);
+            Console.WriteLine("sorgente: " + this.sorgente);
+            Console.WriteLine("Ph: " + this.ph);
+            Console.WriteLine("Capienza in litri: " + this.dimensioneInLitri);
         }
     }
 }

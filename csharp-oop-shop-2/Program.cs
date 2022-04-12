@@ -17,3 +17,6 @@ acquaGuizza.Svuota();
 Console.WriteLine(acquaGuizza.GetLitriDisponibili());
 
 acquaGuizza.StampaProdotto();
+
+Console.WriteLine(ConvertitoreLitriGalloni.ConvertiLitriGalloni(10));
+Console.WriteLine(ConvertitoreLitriGalloni.ConvertiGalloniLitri(10));
