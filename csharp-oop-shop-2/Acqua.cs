@@ -8,21 +8,27 @@ namespace csharp_oop_shop_2
 {
     internal class Acqua : Prodotto
     {
-        private double litri;
+        private double dimensioneInLitri;
+        private double litriDisponibili;
         private double ph;
         private string sorgente;
-        public Acqua(string nome, double litri ,double prezzo, int iva) : base(nome, prezzo, iva)
+        public Acqua(string nome, double dimensioneInLitri ,double prezzo, int iva) : base(nome, prezzo, iva)
         {
-            this.litri = litri;
+            this.dimensioneInLitri = dimensioneInLitri;
+            litriDisponibili = dimensioneInLitri;
             ph = 7;
             sorgente = "Fonte Guizza";
 
         }
 
         //getter acqua
-        public double GetLitri()
+        public double GetDimensioneInLitri()
         {
-            return litri;
+            return dimensioneInLitri;
+        }
+        public double GetLitriDisponibili()
+        {
+            return litriDisponibili;
         }
         public double GetPh()
         {
@@ -33,9 +39,9 @@ namespace csharp_oop_shop_2
             return sorgente;
         }
         //Setter acqua
-        public void SetLitri(double litri)
+        public void SetDimensioneInLitri(double litri)
         {
-            this.litri = litri;
+            this.dimensioneInLitri = litri;
         }
 
 
@@ -46,16 +52,45 @@ namespace csharp_oop_shop_2
             {
                 Console.WriteLine("Non puo bere litri negativi");
             }
-            else if (litriDaBere > litri)
+            else if (litriDaBere > litriDisponibili)
             {
                 Console.WriteLine("Vuoi bere più litri di quanti ce ne siano, hai bevuto tutta l'acqua");
-                litri = 0;
+                litriDisponibili = 0;
             }
             else
             {
-                litri -= litriDaBere;
-                Console.WriteLine("Hai bevuto " + litriDaBere + " litri, ti rimangono " + litri + " litri");
+                litriDisponibili -= litriDaBere;
+                if (litriDisponibili == 0)
+                {
+                    Console.WriteLine("Hai bevuto " + litriDaBere + " litri, non ti rimane più acqua");
+                }
+                else
+                {
+                    Console.WriteLine("Hai bevuto " + litriDaBere + " litri, ti rimangono " + litriDisponibili + " litri");
+                }
+            }
+
+        }
+
+        //Metodo Riempi 
+        public void Riempi(double litriDaRiempire)
+        {
+            double capiezaRimanente = dimensioneInLitri - litriDisponibili;
+            if(litriDaRiempire < 0)
+            {
+                Console.WriteLine("Non puoi riempire litri negativi!");
+            }
+            else if(litriDaRiempire > capiezaRimanente)
+            {
+                litriDisponibili = dimensioneInLitri;
+                Console.WriteLine("Hai riempito più di quanto potevi! La bottiglia è piena con " + litriDisponibili + " litri");
+            }
+            else
+            {
+                litriDisponibili += litriDaRiempire;
+                Console.WriteLine("Hai versato " + litriDaRiempire + " litri la bottiglia contiene ora " + litriDisponibili + " litri");
             }
         }
+
     }
 }

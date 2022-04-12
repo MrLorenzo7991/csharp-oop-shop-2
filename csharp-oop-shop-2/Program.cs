@@ -9,3 +9,6 @@ acquaGuizza.StampaProdotto();
 acquaGuizza.Bevi(1.3);
 acquaGuizza.Bevi(-2);
 acquaGuizza.Bevi(0.7);
+acquaGuizza.Riempi(1);
+acquaGuizza.Riempi(-2);
+acquaGuizza.Riempi(12);
