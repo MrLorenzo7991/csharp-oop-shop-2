@@ -10,11 +10,13 @@ namespace csharp_oop_shop_2
     {
         private uint potenzaInWatt;
         private char classeEnergetica;
+        private bool acceso;
 
         public Elettrodomestico(string nome, string descrizione, uint potenzaInWatt, char classeEnergetica, double prezzo, int iva) : base(nome, descrizione, prezzo, iva)
         {
             this.classeEnergetica = classeEnergetica;
             this.potenzaInWatt = potenzaInWatt;
+            acceso = false;
         }
 
         //getter 
@@ -26,6 +28,10 @@ namespace csharp_oop_shop_2
         {
             return classeEnergetica;
         }
+        public bool GetAcceso()
+        {
+            return acceso;
+        }
 
         //setter
         public void SetPotenzaInWatt(uint nuovaPotenza)
@@ -36,5 +42,32 @@ namespace csharp_oop_shop_2
         {
             classeEnergetica = nuovaClasseEnergetica;
         }
+
+        //metodi
+        public void Accendi()
+        {
+            if (acceso)
+            {
+                Console.WriteLine("L'elettrodomestico è già acceso");
+            }
+            else
+            {
+                acceso=true;
+                Console.WriteLine("Ho acceso l'elettetro domestico");
+            }
+        }
+        public void Spegni()
+        {
+            if (!acceso)
+            {
+                Console.WriteLine("L'elettrodomestico è già spento");
+            }
+            else
+            {
+                acceso = false;
+                Console.WriteLine("Ho spento l'elettetro domestico");
+            }
+        }
+        
     }
 }
